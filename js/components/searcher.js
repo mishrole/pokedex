@@ -2,7 +2,7 @@
 
 const PokemonItem = (pokeItem) => {
 
-	const itemContainer = $('<div class="pokemon-container"></div>');
+	const itemContainer = $('<div class="pokemon-container center col"></div>');
 	const pokemonName = $('<p class="pokemon-name">'+pokeItem.pokemon_species.name+'</p>');
 	const pokemonImage =$('<img src="http://serebii.net/art/th/' + pokeItem.entry_number + '.png" alt="' + pokeItem.pokemon_species.name + '"class="pokemon-image">');
 	itemContainer.append(pokemonImage);
@@ -35,11 +35,11 @@ const Searcher = (update) => {
 	const colInput = $('<div class="col s7"></div>');
 	const form = $('<form></form>');
 	const div = $('<div class="input-field"></div>');
-	const input = $('<input id="search" type="search">');
+	const input = $('<input id="search" type="search" autocomplete="off">');
 	const label = $('<label class="label-icon" for="search"></label>');
 	const searchIcon = $('<i class="material-icons">search</i>');
 	const closeIcon = $('<i class="material-icons">close</i>');
-	const showPokemon = $('<div class="show-pokemon"></div>');
+	const showPokemon = $('<div class="show-pokemon row"></div>');
 
 	div.append(input);
 	label.append(searchIcon);
