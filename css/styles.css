@@ -1,0 +1,35 @@
+@font-face{
+	font-family: 'Flexo';
+	src:local('Flexo'), 
+		local('Flexo-Regular'),
+		local('Flexo Regular'),
+		url('../font/Flexo/Flexo-regular.otf') format('opentype');
+		font-weight: 400;
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body{
+	font-family: 'Flexo', sans-serif;
+}
+
+header{
+	height: 60px;
+	display: flex;
+	align-items: center;
+}
+
+a.title{
+	color: #e84848;
+	font-size: 2.4em;
+	display: flex;
+	justify-content: center;
+}
+
+.main{
+	margin: 0 8vw;
+}
