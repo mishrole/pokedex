@@ -33,3 +33,16 @@ a.title{
 .main{
 	margin: 0 8vw;
 }
+
+img.pokemon-image {
+    height: 140px;
+}
+
+.show-pokemon,
+.pokemon-container{
+	display: inline-block;
+}
+
+.image-content{
+	width: 200px;
+}
