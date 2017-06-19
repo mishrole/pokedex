@@ -2,15 +2,18 @@
 
 const PokemonItem = (pokeItem) => {
 
-	const itemContainer = $('<div class="pokemon-container center col"></div>');
+	const itemContainer = $('<div class="pokemon-container"></div>');
+	const imageContent = $('<div class="image-content"></div>');
+	const nameContent = $('<div class="name-content"></div>');
 	const pokemonName = $('<p class="pokemon-name">'+pokeItem.pokemon_species.name+'</p>');
 	const pokemonImage =$('<img src="http://serebii.net/art/th/' + pokeItem.entry_number + '.png" alt="' + pokeItem.pokemon_species.name + '"class="pokemon-image">');
-	itemContainer.append(pokemonImage);
-	itemContainer.append(pokemonName);
-	//console.log(pokeItem)
-	//console.log(pokeItem.entry_number)
+	imageContent.append(pokemonImage);
+	nameContent.append(pokemonName);
+	itemContainer.append(imageContent);
+	itemContainer.append(nameContent);
 	return itemContainer;
 }
+	
 
 const reRender = (container,filterInput,update) => {
 
@@ -18,13 +21,8 @@ const reRender = (container,filterInput,update) => {
 	const filteredPokemons = filterByPokemon(state.pokemons.pokemon_entries,filterInput);
 
 	filteredPokemons.forEach((pokemon) => {
-		// const pokemonItem = PokemonItem({
-		// 	pokemon: pokemon,
-		// 	update: update
-		// });
+
 		const pokemonItem = PokemonItem(pokemon);
-
-
 		container.append(pokemonItem);
 	});
 };
@@ -39,7 +37,7 @@ const Searcher = (update) => {
 	const label = $('<label class="label-icon" for="search"></label>');
 	const searchIcon = $('<i class="material-icons">search</i>');
 	const closeIcon = $('<i class="material-icons">close</i>');
-	const showPokemon = $('<div class="show-pokemon row"></div>');
+	const showPokemon = $('<div class="show-pokemon"></div>');
 
 	div.append(input);
 	label.append(searchIcon);
